@@ -8,10 +8,6 @@ same individuals for t = 8 months.
 
 sort cpsidp year month
 
-gen Date = ym(year, month)
-format Date %tm
-order Date, after(month)
-
 gen seqdate = _n
 *note:to set this variable as a date variable for future use to xtset the data in order to set the time units as monthly:
 xtset cpsidp seqdate
