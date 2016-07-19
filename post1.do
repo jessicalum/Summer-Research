@@ -8,17 +8,18 @@ same individuals for t = 8 months.
 
 sort cpsidp year month
 
+
+by cpsidp: gen length = _N
+keep if length==8
+*now our dataset has 8 months of data per individual. 
+
+
 by cpsidp: gen seqdate = _n
 *note:to set this variable as a date variable for future use to xtset the data in order to set the time units as monthly:
 xtset cpsidp seqdate
 /*note cpsidp denotes individual identifier. If the analysis we use later on needs the panel to consist of households 
 or states or something else, then we have to xtset cpsid seqdate or xtset statefips seqdate, where cpsid is the household
 id variable and statefips is the state variable. */
-
-by cpsidp: gen length = _N
-keep if length==8
-*now our dataset has 8 months of data per individual. 
-
  
 forval i = 1/9 {
 	by cpsidp: egen rotate`i' = total(month>=`i') if month < (`i' + 4)
