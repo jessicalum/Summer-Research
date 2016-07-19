@@ -6,14 +6,9 @@ do cps_00004
 note: Creation of Variable "Group" to use in longitudinal analysis of the ///
 same individuals for t = 8 months. 
 
-decode month, gen(mnth)
-label define year 2014 "2014" 2015 "2015"
-label val year year
-decode year, gen(yr)
-gen date = yr + mnth
-sort cpsidp year month 
-
-label var date "concatenated year and month"
+gen Date = ym(year, month)
+format Date %tm
+order Date, after(month)
 *note: must set this variable as a date variable for future use to xtset the data
 
 
