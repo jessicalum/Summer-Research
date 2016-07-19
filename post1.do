@@ -6,10 +6,14 @@ do cps_00004
 note: Creation of Variable "Group" to use in longitudinal analysis of the ///
 same individuals for t = 8 months. 
 
+sort cpsidp year month
+
 gen Date = ym(year, month)
 format Date %tm
 order Date, after(month)
-*note: must set this variable as a date variable for future use to xtset the data
+
+gen seqdate = _n
+*note: must set this variable as a date variable for future use to xtset the data in order to set the time units as monthly
 
 
 by cpsidp: gen length = _N
