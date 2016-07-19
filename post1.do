@@ -13,8 +13,8 @@ format Date %tm
 order Date, after(month)
 
 gen seqdate = _n
-*note: must set this variable as a date variable for future use to xtset the data in order to set the time units as monthly
-
+*note:to set this variable as a date variable for future use to xtset the data in order to set the time units as monthly:
+xtset cpsidp seqdate
 
 by cpsidp: gen length = _N
 keep if length==8
