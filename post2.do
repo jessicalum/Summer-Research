@@ -29,9 +29,9 @@ label val underemployed yesno
 
 ---
 
-gen byte hvaryall = inlist(uhrsworkt, 997)
-gen byte hvarymain = inlist(uhrswork1, 997)
-gen byte hvaryother = inlist(uhrswork2, 997) 
+gen byte hvaryall = inlist(uhrsworkt, 997) if !missing(uhrsworkt)
+gen byte hvarymain = inlist(uhrswork1, 997) if !missing(uhrswork1)
+gen byte hvaryother = inlist(uhrswork2, 997) if !missing(uhrswork2)
 label var hvaryall "hours p/w usually vary, all jobs"
 label var hvarymain "hours p/w usually vary, main job"
 label var hvaryother "hours p/w usually vary, other job(s)"
