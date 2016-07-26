@@ -89,8 +89,8 @@ sum hrswork*
 *note: hrsworkall has a max value of 198, which makes no sense because the maximum hours 
 *in a week is 168. 
 *generate an individual mean and sd:
-by cpsidp: egen meanhrsmain = mean(hrsworkmain)
-by cpsidp: egen sdhrsmain = sd(hrsworkmain)
+by cpsidp: egen meanhrsmain = mean(hrsworkmain) if !missing(hrsworkmain)
+by cpsidp: egen sdhrsmain = sd(hrsworkmain) if !missing(hrsworkmain)
 label var meanhrsmain "individual average work hours p/w"
 label var sdhrsmain "individual sd of work hours p/w"
 order meanhrsmain, after(cpsidp)
