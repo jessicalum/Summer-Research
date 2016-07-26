@@ -48,8 +48,8 @@ hours usually worked per week, other job(s) 997 hours vary UHRSWORK2
 
 /*create a categorical variable: = 0 if underemployed, = 1 if reports having 
 hours that vary, = 2 if both */
-gen byte jobquality = 0 if underemployed==1
-replace jobquality = 1 if hvarymain==1
+gen byte jobquality = 0 if underemployed==1 & hvarymain==0
+replace jobquality = 1 if hvarymain==1 & underemployed==0
 replace jobquality = 2 if underemployed==1 & hvarymain==1 
 label var jobquality "job quality"
 label define jobquality 0 "underemployed" 1 "hours vary, main job" 2 "both" 
