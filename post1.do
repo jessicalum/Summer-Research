@@ -40,13 +40,24 @@ forval i = 1/9 {
 
 label var length "Survey months available"
 
-label define rotate 1 "Jan-Apr" 2 "Feb-May" 3 "Mar-Jun" 4 "Apr-Jul" 5 "May-Aug" ///
-6 "Jun-Sep" 7 "Jul-Oct" 8 "Aug-Nov" 9 "Sep-Dec" 
+
+label define rotate1 8 "Jan-Apr" 
+label define rotate2 8 "Feb-May" 
+label define rotate3 8 "Mar-Jun" 
+label define rotate4 8 "Apr-Jul" 
+label define rotate5 8 "May-Aug"
+label define rotate6 8 "Jun-Sep" 
+label define rotate7 8 "Jul-Oct" 
+label define rotate8 8 "Aug-Nov" 
+label define rotate9 8 "Sep-Dec" 
+
 
 forval i = 1/9 {
+	replace rotate`i' = . if rotate`i'!=8 
 	label var rotate`i' "Rotation group `i' == 8"
-	label val rotate`i' rotate
+	label val rotate`i' rotate`i'
 }
+
 
 label var group "Group Number"
 label val group rotate
