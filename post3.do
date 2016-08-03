@@ -55,9 +55,18 @@ xttab hvarymain if underemployed==1
 *69.51% of those who had varied work hours always had varied work hours
 
 
-
-
 /*
+we will be making a table of statistics reported from the xtsum commands. 
+each time you use xtsum..., you can type 
+   return list
+and it will show that it has stored certain values. Below, I've listed the scalars and what they mean.
+For example, the scalar r(mean) holds the overall mean displayed in the output after using the xtsum command. 
+xtsum, xttab and commands you are familiar with such as describe, summarize, and tab are called r-class commands.
+Everytime you use an r-class command, Stata replaces the previous scalars with statistics form the current command used. 
+Hence, we must save them and put them into a matrix to be able to see statistics from several uses of xtsum
+next to each other to further our understanding of different subgroups. 
+
+
       r(mean)        mean
       r(sd)          overall standard deviation
       r(min)         overall minimum
