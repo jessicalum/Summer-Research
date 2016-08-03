@@ -14,16 +14,16 @@
 
 *generate aggregate data by state over time: 
 sort statefip
-by statefip: egen meanhrsstate = mean(hrsworkmain) if !missing(hrsworkmain)
+by statefip: egen meanhrsstate = mean(hrsworkmain)
 label var meanhrsstate "Mean hours worked by state" 
-by statefip: egen sdhrsstate = sd(hrsworkmain) if !missing(hrsworkmain)
+by statefip: egen sdhrsstate = sd(hrsworkmain)
 label var sdhrsstate "SD of hours worked by state"
 
 *one map to consider is the sd per individual over time. then average the sd for each state. this would
 *create one value per state:
-bysort cpsidp: egen sdhrspp = sd(hrsworkmain) if !missing(hrsworkmain)
+bysort cpsidp: egen sdhrspp = sd(hrsworkmain)
 label var sdhrspp "individual sd of hrsworkedmain over time"
-bysort statefip: egen avgsdhrs = mean(sdhrspp) if !missing(hrsworkmain)
+bysort statefip: egen avgsdhrs = mean(sdhrspp)
 label var avgsdhrs "state averages of individual sd"
 *note the difference between avgsdhrs and sdhrsstate.
 *save this dataset 
@@ -43,9 +43,6 @@ merge 1:1 statefip using usdb
 *check that all the states are merged properly. 
 keep if _merge==3
 keep statefip OBJECTID STATE NAME FIP LON LAT Shape_Leng Shape_Area id meanhrsstate sdhrsstate sdhrspp avgsdhrs
-sort id
-by id: gen sample = _N if _n==_N
-keep if sample<.
 
 
 
