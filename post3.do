@@ -79,10 +79,19 @@ next to each other to further our understanding of different subgroups.
       r(max_w)       within maximum
 */
 
+*create a matrix called table1, with 3 rows, 6 columns, and values of 0 in the cells in them:
 matrix table1 = J(3, 6, 0)
 
+*view the empty matrix:
+matrix list table1
+
+
 xtsum meanhrsmain sdhrsmain hrsworkmain if jobquality==0
+*view the temporarily stored scalars:
+return list
+*fill in the first row, first column with the value stored in r(mean)
 matrix table1[1, 1] = r(mean)
+*fill in the first row, second column with the value stored in r(sd) 
 matrix table1[1, 2] = r(sd) 
 matrix table1[1, 3] = r(sd_b)
 matrix table1[1, 4] = r(sd_w)
@@ -107,9 +116,13 @@ matrix table1[3, 4] = r(sd_w)
 matrix table1[3, 5] = r(min_w)
 matrix table1[3, 6] = r(max_w)
 
+*change the names of each row:
 matrix rownames table1 = jobquality0 jobquality1 jobquality2
+
+*change the column names: 
 matrix colnames table1 = mean overall_sd betw_sd within_sd within_min within_max
 
+*view the filled-in matrix:
 matrix list table1
 
 
