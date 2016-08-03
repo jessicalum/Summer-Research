@@ -60,7 +60,9 @@ forval i = 1/9 {
 
 
 label var group "Group Number"
-label val group rotate
+label define rgroup 1 "Jan-Apr" 2 "Feb-May" 3 "Mar-Jun" 4 "Apr-Jul" /// 
+5 "May-Aug" 6 "Jun-Sep" 7 "Jul-Oct" 8 "Aug-Nov" 9 "Sep-Dec" 
+label val group rgroup
 
 datasignature set 
 
