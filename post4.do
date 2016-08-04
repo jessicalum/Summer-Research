@@ -37,7 +37,7 @@ duplicates drop statefip, force
 *save the data
 
 *in your dataset: 
-*duplicates drop statefip 
+duplicates drop statefip 
 merge 1:1 statefip using usdb
 *check that all the states are merged properly. 
 keep if _merge==3
