@@ -47,5 +47,9 @@ merge 1:1 statefip using usdb
 keep if _merge==3
 
 
-spmap sdhrsstate using uscoord if id !=1, id(id) fcolor(Blues) legend(symy(*4) symx(*4) size(*4))
-spmap avgsdhrs using uscoord if id !=1, id(id) fcolor(Blues) legend(symy(*4) symx(*4) size(*4))
+spmap sdhrsstate using uscoord if id !=1, id(id) fcolor(Blues) legend(symy(*2) symx(*2) size(*2))
+spmap avgsdhrs using uscoord if id !=1, id(id) fcolor(Blues) legend(symy(*2) symx(*2) size(*2))
+spmap meanhrsstate using uscoord if id !=1, id(id) fcolor(Blues) legend(symy(*2) symx(*2) size(*2))
+spmap sdhrsstate using uscoord if id !=1, id(id) fcolor(Blues) legend(symy(*2) symx(*2) size(*2))
+
+
