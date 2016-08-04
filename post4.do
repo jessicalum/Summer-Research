@@ -8,6 +8,12 @@
 6. unzip the file. 
 */
 
+*install the necessary commands:
+ssc install spmap
+ssc install shp2dta
+ssc install mif2dta
+
+
 *make files in Stata format: a database file, usdb.dta, and a coordinates file, uscoord.dta 
 shp2dta using s_11au16, database(usdb) coordinates(uscoord) genid(id)
 
