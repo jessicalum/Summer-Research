@@ -32,8 +32,7 @@ label var avgsdhrs "state averages of individual sd"
 
 *merge the usdb data and your dataset: note in order to merge it you must do the following: 
 *in the usdb dataset: 
-rename FIP statefip 
-encode FIP, gen(statefip)
+gen statefip = real(FIPS)
 duplicates drop statefip, force 
 *save the data
 
