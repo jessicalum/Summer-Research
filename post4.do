@@ -41,7 +41,7 @@ label var avgsdhrs "state averages of individual sd"
 *--- 
 
 *Merge the map data file and your CPS data to create the map: 
-duplicates drop statefip 
+duplicates drop statefip, force 
 merge 1:1 statefip using usdb
 *check that all the states are merged properly. 
 keep if _merge==3
