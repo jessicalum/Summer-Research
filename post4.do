@@ -9,7 +9,7 @@
 */
 
 *make files in Stata format: a database file, usdb.dta, and a coordinates file, uscoord.dta 
-shp2dta using s_11au16, database(usdb) coordinates(uscoord)
+shp2dta using s_11au16, database(usdb) coordinates(uscoord) genid(id)
 
 *merge the usdb data and your dataset: note in order to merge it you must do the following: 
 *in the usdb dataset: 
