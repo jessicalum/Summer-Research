@@ -20,7 +20,7 @@ duplicates drop statefip, force
 
 *---
 
-*open your dataset with the ipums variables: 
+*open your dataset with the CPS variables: 
 
 *generate aggregate data by state over time: 
 sort statefip
