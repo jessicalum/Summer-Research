@@ -90,8 +90,8 @@ sum hrswork*
 *in a week is 168. 
 *generate an individual mean and sd:
 sort cpsidp
-by cpsidp: egen meanhrsmain = mean(hrsworkmain) if !missing(hrsworkmain)
-by cpsidp: egen sdhrsmain = sd(hrsworkmain) if !missing(hrsworkmain)
+by cpsidp: egen meanhrsmain = mean(hrsworkmain)
+by cpsidp: egen sdhrsmain = sd(hrsworkmain)
 label var meanhrsmain "individual average work hours p/w"
 label var sdhrsmain "individual sd of work hours p/w"
 order meanhrsmain, after(cpsidp)
