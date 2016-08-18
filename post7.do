@@ -45,13 +45,15 @@ list statefip mnthyr test if test!=1
 *this tells us that Utah, North Carolina, and Montana have a test value of .9999999 which is close to 1, so we can still make the triplot. 
 
 
+
+
 forval i = 1/9 {
-	triplot pctpart pctfull pctneith if mnthyr==`i', separate(statefip) legend(off) 
+	triplot pctpart pctfull pctneith if mnthyr==`i', separate(statefip) legend(off) note(t=`i')
 	graph export triplot_00`i'.png
 }
 
 forval i = 10/24 {
-	triplot pctpart pctfull pctneith if mnthyr==`i', separate(statefip) legend(off)
+	triplot pctpart pctfull pctneith if mnthyr==`i', separate(statefip) legend(off) note(t=`i')
 	graph export triplot_0`i'.png
 }
 
