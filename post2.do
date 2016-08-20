@@ -1,6 +1,6 @@
 *creation of different measurements of job quality based on work schedule irregularity:
 *import variables: wkstat, uhrsworkt, uhrswork1, uhrswork2, ahrsworkt, ahrswork1, ahrswork2
----
+*---
 
 /*
  WKSTAT		Full or part time status
@@ -27,7 +27,7 @@ label var underemployed "underemployed for economic reasons?"
 label define yesno 0 "no" 1 "yes" 
 label val underemployed yesno 
 
----
+*---
 
 gen byte hvaryall = inlist(uhrsworkt, 997) if !missing(uhrsworkt)
 gen byte hvarymain = inlist(uhrswork1, 997) if !missing(uhrswork1)
@@ -44,7 +44,7 @@ hours usually worked per week at main job UHRSWORK1 == 997 Hours vary
 hours usually worked per week, other job(s) 997 hours vary UHRSWORK2
 */
 
----
+*---
 
 /*create a categorical variable: = 0 if underemployed, = 1 if reports having 
 hours that vary, = 2 if both */
@@ -55,7 +55,7 @@ label var jobquality "job quality"
 label define jobquality 0 "underemployed" 1 "hours vary, main job" 2 "both" 
 label val jobquality jobquality 
 
----
+*---
 
 /*
 note to self:
@@ -97,7 +97,7 @@ label var sdhrsmain "individual sd of work hours p/w"
 order meanhrsmain, after(cpsidp)
 order hrsworkmain, before(meanhrsmain)
 order sdhrsmain, after(meanhrsmain)
----
+*---
 
 gen byte sample = inrange(wkstat, 10, 42)
 label var sample "sample for analysis: employed"
