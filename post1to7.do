@@ -25,6 +25,8 @@ ssc install mif2dta
 
 7. download ffmpeg to make gifs: https://ffmpeg.org/
 Now you are ready to execute this do-file and you will be all caught up as of 08/20/2016
+NOTE: because of the creation of graphs and the loops, it may take a while to execute the whole do-file. Just be patient
+and it should all work out. Send me a message if you have any problems executing this do-file to completion.
 */
 
 *POST1
