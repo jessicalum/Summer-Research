@@ -7,8 +7,10 @@ using tsspell:
 3.measure spells of part-time work/ part-time work for economic reasons. 
 */
 
-gen byte parttime = inlist(wkstat, 14, 15, 20, 22, 40, 41, 42) if wkstat<50
 
+
+*generate an indicator for usually full-time or usually part-time 
+gen byte parttime = inlist(wkstat, 14, 15, 20, 22, 40, 41, 42) if wkstat<50
 
 *order the vars in the varlist for ease of understanding in data browser
 order underemployed, after(cpsidp)
@@ -51,10 +53,6 @@ xttab hvarymlongspell if hvarymmaxspell==1
 
 
 *--- 
-
-
-*generate an indicator for usually full-time or usually part-time 
-gen byte parttime = inlist(wkstat, 14, 15, 20, 22, 40, 41, 42) if wkstat<50
 
 tsspell parttime ,cond(parttime==1) seq(parttimeseq) spell(parttimespell) end(parttimeend)
 *label these variables
