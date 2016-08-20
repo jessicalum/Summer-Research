@@ -46,7 +46,7 @@ list statefip mnthyr test if test!=1
 
 
 
-
+ssc install triplot
 forval i = 1/9 {
 	triplot pctpart pctfull pctneith if mnthyr==`i', separate(statefip) legend(off) note(t=`i')
 	graph export triplot_00`i'.png
