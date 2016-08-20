@@ -7,6 +7,8 @@ using tsspell:
 3.measure spells of part-time work/ part-time work for economic reasons. 
 */
 
+gen byte parttime = inlist(wkstat, 14, 15, 20, 22, 40, 41, 42) if wkstat<50
+
 
 *order the vars in the varlist for ease of understanding in data browser
 order underemployed, after(cpsidp)
