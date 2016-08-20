@@ -19,7 +19,7 @@ order hrsworkmain, after(hvarymain)
 order parttime, after(hrsworkmain) 
 
 *---
-
+ssc install tsspell
 tsspell underemployed ,cond(underemployed==1) seq(underempseq) spell(underempspell) end(underempend)
 *label these variables. 
 order underemployed, before(underempseq)
