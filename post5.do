@@ -10,7 +10,7 @@ forval j=2014/2015{
 }
 }
 
-*example of one map of January 2015 statistics across the U.S. using spmap: 
+*example of one map of June 2015 statistics across the U.S. using spmap: 
 
 preserve
 sort statefip year month
