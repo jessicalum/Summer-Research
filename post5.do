@@ -10,6 +10,17 @@ forval j=2014/2015{
 }
 }
 
+/*
+This creates the within estimator of standard deviation of work hours of each individual by year. 
+Since this creates a within estimator, it tells us more useful information about how individuals` work hours vary over time per state
+*/
+forval i = 2014/2015 {
+	by statefip cpsidp year: egen meanhrsstatem`i' = mean(hrsworkmain)
+	label var meanhrsstatem`i' "Mean hours worked by state, `i'" 
+	by statefip cpsidp year: egen sdhrsstatem`i' = sd(hrsworkmain)
+	label var sdhrsstatem`i' "SD of hours worked by state, `i'"
+}
+
 *example of one map of May 2015 statistics across the U.S. using spmap: 
 
 preserve
