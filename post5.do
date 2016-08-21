@@ -20,7 +20,7 @@ merge 1:1 statefip using usdbforpost5
 *refer to post4.do and the information in the comment about post4.do under the issue of Meeting & Assignments to understand what the usdb file is. 
 keep if _merge==3
 spmap sdhrsstatem52015 using uscoord if id !=1 & id!=4 & id!=54 & id!=55, id(id) fcolor(Blues) legend(symy(*2) symx(*2) size(*2)) note(t=13)
-restore
+
 
 
 
