@@ -23,6 +23,10 @@ forval i = 2014/2015 {
 
 bysort statefip: egen avgmeanhrsstate2014 = mean(meanhrsstate2014)
 bysort statefip: egen avgsdhrsstate2014 = mean(sdhrsstate2014)
+bysort statefip: egen avgmeanhrsstate2015 = mean(meanhrsstate2015)
+bysort statefip: egen avgsdhrsstate2015 = mean(sdhrsstate2015)
+*these two variables will be unique per state and so can be mapped after dropping duplicates in these variables.
+
 
 *example of one map of May 2015 statistics across the U.S. using spmap: 
 
