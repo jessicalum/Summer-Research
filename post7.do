@@ -58,7 +58,7 @@ forval i = 10/24 {
 	graph export triplot_0`i'.png
 }
 
-cd /Users/ChanKLum/Desktop/SummerResearch/
+local GraphPath /Users/ChanKLum/Desktop/SummerResearch/
 shell "/Users/ChanKLum/Desktop/SummerResearch/ffmpeg" -i `GraphPath'triplot_%03d.png -b:v 512k `GraphPath'triplot.mpg
 shell "/Users/ChanKLum/Desktop/SummerResearch/ffmpeg" -r 10 -i `GraphPath'triplot.mpg -t 10 -r 10 `GraphPath'triplot.gif
 
@@ -88,5 +88,4 @@ xtline meansdhrsmy, overlay
 xtline meanmeanhrsmy, overlay
 *West South Central Division maintains a steady value over time. 
 
-restore
 
