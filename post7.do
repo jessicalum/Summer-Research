@@ -41,6 +41,7 @@ assert pctneith<1
 egen test = rowtotal(pctpart pctfull pctneith) 
 assert test==1
 *note assertion is false, therefore we will find out why
+tab test
 list statefip mnthyr test if test!=1
 *this tells us that Utah, North Carolina, and Montana have a test value of .9999999 which is close to 1, so we can still make the triplot. 
 
