@@ -26,7 +26,7 @@ tsspell underemployed ,cond(underemployed==1) seq(underempseq) spell(underempspe
 *label these variables. 
 order underemployed, before(underempseq)
 order cpsidp, before(underemployed) 
-list cpsidp underemployed underempseq underempspell underempend in 16105/16112, sep(0)
+list year month cpsidp underemployed underempseq underempspell underempend in 16105/16112, sep(0)
 
 
 *generate the maximum amount of spells:
