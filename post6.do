@@ -18,12 +18,16 @@ order hvarymain, after(underemployed)
 order hrsworkmain, after(hvarymain)
 order parttime, after(hrsworkmain) 
 
+
 *---
 ssc install tsspell
+xtset cpsidp seqdate
 tsspell underemployed ,cond(underemployed==1) seq(underempseq) spell(underempspell) end(underempend)
 *label these variables. 
 order underemployed, before(underempseq)
 order cpsidp, before(underemployed) 
+list cpsidp underemployed underempseq underempspell underempend in 16105/16112, sep(0)
+
 
 *generate the maximum amount of spells:
 by cpsidp: egen underempmaxspell = max(underempspell) if !missing(underemployed)
